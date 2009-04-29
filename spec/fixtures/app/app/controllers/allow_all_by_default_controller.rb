@@ -1,0 +1,2 @@
+class AllowAllByDefaultController < TestController
+end

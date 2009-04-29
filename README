@@ -1,0 +1,13 @@
+rails_doorman
+============
+
+Ruby on Rails plugin that provides an allow/deny DSL for controlling access
+
+deny :host => "209.34.*"
+deny :user => "bill"       # calls current_user.login, but this is configurable
+deny :user_agent => /MSIE/
+
+# mostly closed:
+deny :all                           # removes implicit final allow :all
+allow :host => "*.example.com"
+
