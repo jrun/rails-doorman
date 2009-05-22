@@ -36,7 +36,7 @@ module Doorman
       lambda { deny :host => "192.168.*" }.should_not raise_error
       lambda { deny :user => "bill" }.should_not raise_error
       lambda { deny :user_agent => /MSIE/ }.should_not raise_error
-      lambda { deny :time => "8am-5pm" }.should_not raise_error
+#      lambda { deny :time => "8am-5pm" }.should_not raise_error
       lambda { deny {|c| c.foo } }.should_not raise_error
     end
 
