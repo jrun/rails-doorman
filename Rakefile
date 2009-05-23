@@ -13,8 +13,7 @@ spec = Gem::Specification.new do |s|
   s.name = GEM_NAME
   s.version = GEM_VERSION
   s.platform = Gem::Platform::RUBY
-  s.has_rdoc = true
-  s.extra_rdoc_files = ["README", "LICENSE", 'TODO']
+  s.has_rdoc = false
   s.summary = SUMMARY
   s.description = s.summary
   s.author = AUTHOR
@@ -22,7 +21,7 @@ spec = Gem::Specification.new do |s|
   s.homepage = HOMEPAGE
   s.add_dependency('rails', '>= 2.3.2')
   s.require_path = 'lib'
-  s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{lib,spec}/**/*")
+  s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{rails,lib,spec,features}/**/*")
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
@@ -34,8 +33,6 @@ namespace :gem do
   task :refresh do
     Rake::Task[:spec].invoke    
     Rake::Task[:repackage].invoke
-    Rake::Task[:uninstall].invoke
-    Rake::Task[:install].invoke    
   end
 end
 
