@@ -21,7 +21,7 @@ spec = Gem::Specification.new do |s|
   s.homepage = HOMEPAGE
   s.add_dependency('rails', '>= 2.3.2')
   s.require_path = 'lib'
-  s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{rails,lib,spec,features}/**/*")
+  s.files = %w(LICENSE README.rdoc Rakefile) + Dir.glob("{rails,lib,spec,features}/**/*")
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
