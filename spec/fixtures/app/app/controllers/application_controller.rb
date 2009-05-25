@@ -6,14 +6,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   filter_parameter_logging :password
 
-  # TODO: come up with a solution where this isn't public
-  #class_inheritable_accessor :current_user
-  cattr_accessor :current_user
-  self.current_user ||= User.new
-
   helper_method :current_user
   
+  def self.nil_current_user
+    current_user = nil
+  end
+  
   private
+    cattr_accessor :current_user
+    self.current_user ||= User.new
+
   def rescue_action_in_public(exception)
     case exception
     when Doorman::InvalidRule
