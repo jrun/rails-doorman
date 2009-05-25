@@ -21,10 +21,7 @@ Bugs
 
 == Usage
 
-When a rule fails a Doorman::Unauthorized error is raised. The error
-can then be caught in ApplicationController#rescue_action_in_public.
-
-==== Controllers
+=== Controllers
 
   class Admin::ArticlesController < AdminController
     allow :role => :admin
@@ -42,7 +39,7 @@ can then be caught in ApplicationController#rescue_action_in_public.
   deny :host => 'denied.example.org'
   deny :user_agent => /MSIE/                # request.user_agent =~ Regexp.new(/MSIE/)
 
-==== Views
+=== Views
 
 All rules can be used in views.
 
@@ -53,6 +50,25 @@ All rules can be used in views.
   <% deny(:role => :troll) do %>
     <h1>Allowed</h1>
   <% end %>
+
+=== Unauthorized
+
+When a rule fails a Doorman::Unauthorized error is raised. The error
+can be caught in ApplicationController#rescue_action_in_public.
+
+  class ApplicationController < ActionController::Base
+    private
+    def rescue_action_in_public(exception)
+      case exception
+      when Doorman::InvalidRule
+        render :text => 'Invalid Rule', :status => '500 Internal Server Error'
+      when Doorman::Unauthorized
+        render :text => 'Unauthorized', :status => '401 Unauthorized'
+      else
+        super(exception)
+      end
+    end
+  end
 
 == TODO
 
