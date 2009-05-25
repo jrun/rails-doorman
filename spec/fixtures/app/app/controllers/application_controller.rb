@@ -9,12 +9,17 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   
   def self.nil_current_user
-    current_user = nil
+    self.current_user = nil
   end
-  
-  private
-    cattr_accessor :current_user
+
+  def self.reset_current_user
     self.current_user ||= User.new
+    self.current_user.reset
+  end
+    
+  private
+  cattr_accessor :current_user
+  self.current_user ||= User.new
 
   def rescue_action_in_public(exception)
     case exception

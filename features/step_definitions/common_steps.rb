@@ -1,10 +1,10 @@
 Given /^I am (.*)$/ do |name|
-  ApplicationController.current_user.reset
+  ApplicationController.reset_current_user
   ApplicationController.current_user.login = name.downcase
 end
 
 Given /^I have no roles$/ do
-  ApplicationController.current_user.reset
+  ApplicationController.reset_current_user
 end
 
 Given /^I have the role (.*)$/ do |role|
@@ -18,4 +18,8 @@ end
 
 Then /^I should not be authorized$/ do
   response.should be_unauthorized
+end
+
+When /^There is no current user$/ do
+  ApplicationController.nil_current_user
 end

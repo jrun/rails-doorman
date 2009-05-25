@@ -49,7 +49,7 @@ Feature: Manage Access
     When I go to /allowed_and_denied_roles
     Then I should be authorized
 
-  Scenario: Unauthorized when the user belongs to the denied rolee
+  Scenario: Unauthorized when the user belongs to the denied role
     Given I have the role troll
     When I go to /allowed_and_denied_roles
     Then I should not be authorized
@@ -75,6 +75,12 @@ Feature: Manage Access
   Scenario: Unauthorized when the host is not explicitly allowed
     When I go to /access_control_by_host
     Then I should not be authorized
+
+  Scenario: Unauthorized when authorizing via role and there is not acurrent user
+    When There is no current user
+    And  I go to /allowed_role
+    Then I should not be authorized
+
 
   Scenario: View Helpers - Allow
     Given I have the role admin

@@ -92,9 +92,9 @@ module Doorman
         when :host
           request.host =~ Regexp.new(rule.value)
         when :role
-          current_user.send(Doorman.options[:has_role_method], rule.value)
+          current_user && current_user.send(Doorman.options[:has_role_method], rule.value)
         when :user
-          current_user.send(Doorman.options[:user_identifier_method]).to_sym  == rule.value.to_sym
+          current_user && current_user.send(Doorman.options[:user_identifier_method]).to_sym  == rule.value.to_sym
         when :user_agent 
           request.user_agent =~ Regexp.new(rule.value)
         else

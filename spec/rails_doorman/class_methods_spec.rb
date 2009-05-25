@@ -44,5 +44,6 @@ module Doorman
       lambda { deny :foo => "3" }.should raise_error
       lambda { deny { foo } }.should raise_error
     end
+
   end
 end
