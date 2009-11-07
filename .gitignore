@@ -1,3 +1,4 @@
 pkg
-log/*
+log
 pkg
+spec/fixtures/app/log
