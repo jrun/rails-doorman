@@ -16,12 +16,18 @@ class ApplicationController < ActionController::Base
     self.current_user ||= User.new
     self.current_user.reset
   end
-    
-  private
+  
+  protected
   cattr_accessor :current_user
   self.current_user ||= User.new
-
+  
+  
   def rescue_action_in_public(exception)
+    
+
+    Rails.logger.debug "******************* IN HERE"
+
+    
     case exception
     when Doorman::InvalidRule
       render :text => 'Invalid Rule', :status => '500 Internal Server Error'

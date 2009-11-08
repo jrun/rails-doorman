@@ -76,7 +76,7 @@ Feature: Manage Access
     When I go to /access_control_by_host
     Then I should not be authorized
 
-  Scenario: Unauthorized when authorizing via role and there is not acurrent user
+  Scenario: Unauthorized when authorizing via role and there is not a current user
     When There is no current user
     And  I go to /allowed_role
     Then I should not be authorized

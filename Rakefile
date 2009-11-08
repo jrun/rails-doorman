@@ -18,6 +18,7 @@ begin
     gem.authors = ["Jeremy Burks"]
     gem.add_dependency('rails', '>= 2.3.2')
     gem.add_development_dependency "rspec", ">= 1.2.9"
+    gem.add_development_dependency "rspec-rails", ">= 1.2.9"
     gem.add_development_dependency "cucumber", ">= 0"
     gem.files = %w(LICENSE README.rdoc Rakefile) + Dir.glob("{rails,lib,spec,features}/**/*")
   end

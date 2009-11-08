@@ -8,6 +8,9 @@ require 'cucumber/formatter/unicode'
 require 'webrat'
 require 'webrat/core/matchers'
 
-Webrat.configure do |config|
+# grrr, finding this sucked
+ActionController::Base.allow_rescue = true
+
+Webrat.configure do |config|  
   config.mode = :rails
 end
