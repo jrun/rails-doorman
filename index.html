@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Documentation by YARD 0.4.0</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a title="Index" href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Namespace List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'><h1>rails-doorman</h1>
+<p>
+<tt>rails-doorman</tt> is an authorization plugin for Ruby on Rails
+applications. This code was orignally written by Michael D. Ivey for Merb.
+</p>
+<h2>Configuration</h2>
+<p>
+Doorman expects the controller to respond to <tt>current_user</tt>
+</p>
+<p>
+The <tt>:role</tt> option expects <tt>current_user</tt> to respond to
+<tt>has_role?(role_name)</tt>. To change the default assign the option a
+new value:
+</p>
+<pre class="code">
+  <span class='Doorman constant id'>Doorman</span><span class='dot token'>.</span><span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:has_role_method</span><span class='rbrack token'>]</span>
+</pre>
+<p>
+The <tt>:user</tt> option expects <tt>current_user</tt> to respond to
+<tt>login</tt>. To change the default assign the option a new value:
+</p>
+<pre class="code">
+  <span class='Doorman constant id'>Doorman</span><span class='dot token'>.</span><span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:user_identifier_method</span><span class='rbrack token'>]</span>
+</pre>
+<h2>Usage</h2>
+<h3>Controllers</h3>
+<pre class="code">
+  <span class='class class kw'>class</span> <span class='Admin constant id'>Admin</span><span class='colon2 op'>::</span><span class='ArticlesController constant id'>ArticlesController</span> <span class='lt op'>&lt;</span> <span class='AdminController constant id'>AdminController</span>
+    <span class='allow identifier id'>allow</span> <span class='symbol val'>:role</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:admin</span>
+  <span class='end end kw'>end</span>
+
+  <span class='allow identifier id'>allow</span> <span class='symbol val'>:role</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:admin</span>                         <span class='comment val'># current_user.has_role?(:admin)</span>
+  <span class='deny identifier id'>deny</span> <span class='symbol val'>:role</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:troll</span>
+  <span class='allow identifier id'>allow</span> <span class='symbol val'>:role</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:admin</span><span class='comma token'>,</span> <span class='symbol val'>:exclude</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:show</span>
+  <span class='allow identifier id'>allow</span> <span class='symbol val'>:role</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:troll</span><span class='comma token'>,</span> <span class='symbol val'>:only</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:index</span>
+</pre>
+<p>
+<tt>rails-doorman</tt> supports more than roles.
+</p>
+<pre class="code">
+  <span class='allow identifier id'>allow</span> <span class='symbol val'>:user</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:nancy</span>                     <span class='comment val'># current_user.login.to_sym == 'nancy'.to_sym</span>
+  <span class='allow identifier id'>allow</span> <span class='symbol val'>:host</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'allowed.example.org'</span>      <span class='comment val'># request.host =~ Regexp.new('allowed.example.org')</span>
+  <span class='deny identifier id'>deny</span> <span class='symbol val'>:host</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'denied.example.org'</span>
+  <span class='deny identifier id'>deny</span> <span class='symbol val'>:user_agent</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='regexp val'>/MSIE/</span>                <span class='comment val'># request.user_agent =~ Regexp.new(/MSIE/)</span>
+</pre>
+<h3>Views</h3>
+<p>
+All rules can be used in views.
+</p>
+<pre class="code">
+  <span class='lt op'>&lt;</span><span class='string val'>% allow(:role </span><span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:admin</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='string val'>%&gt;
+    &lt;h1&gt;</span><span class='Allowed constant id'>Allowed</span><span class='lt op'>&lt;</span><span class='regexp val'>/h1&gt;
+  &lt;% end %&gt;
+
+  &lt;% deny(:role =&gt; :troll) do %&gt;
+    &lt;h1&gt;Allowed&lt;/</span><span class='h1 identifier id'>h1</span><span class='gt op'>&gt;</span>
+  <span class='lt op'>&lt;</span><span class='string val'>% end </span><span class='mod op'>%</span><span class='gt op'>&gt;</span>
+</pre>
+<h3>Unauthorized</h3>
+<p>
+When a rule fails a Doorman::Unauthorized error is raised. The error can be
+caught in ApplicationController#rescue_action_in_public.
+</p>
+<pre class="code">
+  <span class='class class kw'>class</span> <span class='ApplicationController constant id'>ApplicationController</span> <span class='lt op'>&lt;</span> <span class='ActionController constant id'>ActionController</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
+    <span class='private identifier id'>private</span>
+    <span class='def def kw'>def</span> <span class='rescue_action_in_public identifier id'>rescue_action_in_public</span><span class='lparen token'>(</span><span class='exception identifier id'>exception</span><span class='rparen token'>)</span>
+      <span class='case case kw'>case</span> <span class='exception identifier id'>exception</span>
+      <span class='when when kw'>when</span> <span class='Doorman constant id'>Doorman</span><span class='colon2 op'>::</span><span class='InvalidRule constant id'>InvalidRule</span>
+        <span class='render identifier id'>render</span> <span class='symbol val'>:text</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'Invalid Rule'</span><span class='comma token'>,</span> <span class='symbol val'>:status</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'500 Internal Server Error'</span>
+      <span class='when when kw'>when</span> <span class='Doorman constant id'>Doorman</span><span class='colon2 op'>::</span><span class='Unauthorized constant id'>Unauthorized</span>
+        <span class='render identifier id'>render</span> <span class='symbol val'>:text</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'Unauthorized'</span><span class='comma token'>,</span> <span class='symbol val'>:status</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'401 Unauthorized'</span>
+      <span class='else else kw'>else</span>
+        <span class='super super kw'>super</span><span class='lparen token'>(</span><span class='exception identifier id'>exception</span><span class='rparen token'>)</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+</pre>
+<h2>Resources</h2>
+<p>
+Development
+</p>
+<ul>
+<li>http://github.com/jrun/rails-doorman
+
+</li>
+</ul>
+<p>
+Source
+</p>
+<ul>
+<li>git://github.com/jrun/rails-doorman.git
+
+</li>
+</ul>
+<p>
+Bugs
+</p>
+<ul>
+<li>http://github.com/jrun/rails-doorman/issues
+
+</li>
+</ul>
+<h2>TODO</h2>
+<h3>Rule inheritance</h3>
+<p>
+Controller subclasses do not inherit its parents rules. This is more like a
+bug than a todo.
+</p>
+<h3>More configurable</h3>
+<p>
+<tt>rails-doorman</tt> should be configurable. For example, the :user rule
+uses <tt>login</tt> for comparison. Often times <tt>username</tt> is used
+instead of <tt>login</tt>.
+</p>
+<p>
+This type of configuration is partially implementd but it is half baked.
+</p>
+</div></div>
+    
+    <div id="footer">
+  Generated on Fri Dec  4 23:41:38 2009 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.4.0 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,701 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Class: Doorman::Rule</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (R)</a> &raquo; 
+    <a title="Doorman" href="../Doorman.html">Doorman</a>
+     &raquo; 
+    <span class="title">Rule</span>
+  
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Namespace List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Doorman::Rule 
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/doorman/rule.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+  <h2>Attribute Summary</h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#limits (instance method)" href="#limits-instance_method">- (Object) <strong>limits</strong> </a>
+  
+  </span>
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Returns the value of attribute <tt>limits</tt>.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#method (instance method)" href="#method-instance_method">- (Object) <strong>method</strong> </a>
+  
+  </span>
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Returns the value of attribute <tt>method</tt>.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#type (instance method)" href="#type-instance_method">- (Object) <strong>type</strong> </a>
+  
+  </span>
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Returns the value of attribute <tt>type</tt>.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#value (instance method)" href="#value-instance_method">- (Object) <strong>value</strong> </a>
+  
+  </span>
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Returns the value of attribute <tt>value</tt>.
+
+</span>
+  
+</li>
+
+    
+  </ul>
+
+
+  <h2>Method Summary</h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="extract_limits (class method)" href="#extract_limits-class_method">+ (Object) <strong>extract_limits</strong>(h) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="from_block (class method)" href="#from_block-class_method">+ (Object) <strong>from_block</strong>(type, opts = nil, &amp;block) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="from_hash (class method)" href="#from_hash-class_method">+ (Object) <strong>from_hash</strong>(type, opts) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#deny? (instance method)" href="#deny%3F-instance_method">- (Object) <strong>deny?</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#evaluate? (instance method)" href="#evaluate%3F-instance_method">- (Object) <strong>evaluate?</strong>(action_name) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#initialize (instance method)" href="#initialize-instance_method">- (Rule) <strong>initialize</strong>(type) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+A new instance of <tt>Rule</tt>.
+
+</span>
+  
+</li>
+
+    
+  </ul>
+
+<div id="constructor_details">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt><a title="Rule" href="">Rule</a></tt>) <strong>initialize</strong>(type) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+A new instance of <tt>Rule</tt>
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt><a title="Rule" href="">Rule</a></tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        
+a new instance of <tt>Rule</tt>
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/doorman/rule.rb', line 45</span>
+
+<span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='type identifier id'>type</span><span class='rparen token'>)</span>
+  <span class='@type ivar id'>@type</span><span class='comma token'>,</span> <span class='@limits ivar id'>@limits</span> <span class='assign token'>=</span> <span class='type identifier id'>type</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="attr_details">
+    <h2>Attribute Details</h2>
+    
+      
+      <span id="limits=-instance_method"></span>
+      <span id="limits-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="limits-instance_method">
+  
+    - (<tt>Object</tt>) <strong>limits</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute <tt>limits</tt>
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/doorman/rule.rb', line 43</span>
+
+<span class='def def kw'>def</span> <span class='limits identifier id'>limits</span>
+  <span class='@limits ivar id'>@limits</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="method=-instance_method"></span>
+      <span id="method-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="method-instance_method">
+  
+    - (<tt>Object</tt>) <strong>method</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute <tt>method</tt>
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/doorman/rule.rb', line 43</span>
+
+<span class='def def kw'>def</span> <span class='method identifier id'>method</span>
+  <span class='@method ivar id'>@method</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="type=-instance_method"></span>
+      <span id="type-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="type-instance_method">
+  
+    - (<tt>Object</tt>) <strong>type</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute <tt>type</tt>
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/doorman/rule.rb', line 43</span>
+
+<span class='def def kw'>def</span> <span class='type identifier id'>type</span>
+  <span class='@type ivar id'>@type</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="value=-instance_method"></span>
+      <span id="value-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="value-instance_method">
+  
+    - (<tt>Object</tt>) <strong>value</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute <tt>value</tt>
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/doorman/rule.rb', line 43</span>
+
+<span class='def def kw'>def</span> <span class='value identifier id'>value</span>
+  <span class='@value ivar id'>@value</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="method_details">
+    <h2>Method Details</h2>
+    
+      <div class="method_details first">
+  <p class="signature first" id="extract_limits-class_method">
+  
+    + (<tt>Object</tt>) <strong>extract_limits</strong>(h) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/doorman/rule.rb', line 37</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='extract_limits identifier id'>extract_limits</span><span class='lparen token'>(</span><span class='h identifier id'>h</span><span class='rparen token'>)</span>
+  <span class='h identifier id'>h</span><span class='dot token'>.</span><span class='slice identifier id'>slice</span><span class='lparen token'>(</span><span class='symbol val'>:only</span><span class='comma token'>,</span> <span class='symbol val'>:exclude</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='inject identifier id'>inject</span><span class='lparen token'>(</span><span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='limits identifier id'>limits</span><span class='comma token'>,</span> <span class='kv identifier id'>kv</span><span class='bitor op'>|</span> 
+    <span class='limits identifier id'>limits</span><span class='dot token'>.</span><span class='merge! fid id'>merge!</span><span class='lparen token'>(</span><span class='kv identifier id'>kv</span><span class='dot token'>.</span><span class='first identifier id'>first</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='Array constant id'>Array</span><span class='lparen token'>(</span><span class='kv identifier id'>kv</span><span class='dot token'>.</span><span class='last identifier id'>last</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='map identifier id'>map</span> <span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='limit identifier id'>limit</span><span class='bitor op'>|</span> <span class='limit identifier id'>limit</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="from_block-class_method">
+  
+    + (<tt>Object</tt>) <strong>from_block</strong>(type, opts = nil, &amp;block) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/doorman/rule.rb', line 25</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='from_block identifier id'>from_block</span><span class='lparen token'>(</span><span class='type identifier id'>type</span><span class='comma token'>,</span> <span class='opts identifier id'>opts</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
+  <span class='unless unless kw'>unless</span> <span class='block identifier id'>block</span><span class='dot token'>.</span><span class='arity identifier id'>arity</span> <span class='eq op'>==</span> <span class='integer val'>1</span>
+    <span class='raise identifier id'>raise</span> <span class='InvalidRule constant id'>InvalidRule</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='type identifier id'>type</span><span class='comma token'>,</span> <span class='opts identifier id'>opts</span><span class='comma token'>,</span> <span class='block identifier id'>block</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+  <span class='opts identifier id'>opts</span> <span class='opasgn op'>||=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span>
+  <span class='rule identifier id'>rule</span> <span class='assign token'>=</span> <span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='type identifier id'>type</span><span class='rparen token'>)</span>
+  <span class='rule identifier id'>rule</span><span class='dot token'>.</span><span class='method identifier id'>method</span> <span class='assign token'>=</span> <span class='symbol val'>:block</span>
+  <span class='rule identifier id'>rule</span><span class='dot token'>.</span><span class='value identifier id'>value</span> <span class='assign token'>=</span> <span class='block identifier id'>block</span>
+  <span class='rule identifier id'>rule</span><span class='dot token'>.</span><span class='limits identifier id'>limits</span> <span class='assign token'>=</span> <span class='extract_limits identifier id'>extract_limits</span><span class='lparen token'>(</span><span class='opts identifier id'>opts</span><span class='rparen token'>)</span>
+  <span class='rule identifier id'>rule</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="from_hash-class_method">
+  
+    + (<tt>Object</tt>) <strong>from_hash</strong>(type, opts) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/doorman/rule.rb', line 10</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='from_hash identifier id'>from_hash</span><span class='lparen token'>(</span><span class='type identifier id'>type</span><span class='comma token'>,</span> <span class='opts identifier id'>opts</span><span class='rparen token'>)</span>
+  <span class='rule identifier id'>rule</span> <span class='assign token'>=</span> <span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='type identifier id'>type</span><span class='rparen token'>)</span>
+  <span class='h identifier id'>h</span> <span class='assign token'>=</span> <span class='opts identifier id'>opts</span><span class='dot token'>.</span><span class='except identifier id'>except</span><span class='lparen token'>(</span><span class='symbol val'>:only</span><span class='comma token'>,</span> <span class='symbol val'>:exclude</span><span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='h identifier id'>h</span><span class='dot token'>.</span><span class='size identifier id'>size</span> <span class='gt op'>&gt;</span> <span class='integer val'>1</span>
+    <span class='raise identifier id'>raise</span> <span class='InvalidRule constant id'>InvalidRule</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='type identifier id'>type</span><span class='comma token'>,</span> <span class='opts identifier id'>opts</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+  <span class='rule identifier id'>rule</span><span class='dot token'>.</span><span class='method identifier id'>method</span> <span class='assign token'>=</span> <span class='h identifier id'>h</span><span class='dot token'>.</span><span class='keys identifier id'>keys</span><span class='dot token'>.</span><span class='first identifier id'>first</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span>
+  <span class='unless unless kw'>unless</span> <span class='Doorman constant id'>Doorman</span><span class='dot token'>.</span><span class='supported_method? fid id'>supported_method?</span><span class='lparen token'>(</span><span class='rule identifier id'>rule</span><span class='dot token'>.</span><span class='method identifier id'>method</span><span class='rparen token'>)</span>
+    <span class='raise identifier id'>raise</span> <span class='InvalidRule constant id'>InvalidRule</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='type identifier id'>type</span><span class='comma token'>,</span> <span class='opts identifier id'>opts</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+  <span class='rule identifier id'>rule</span><span class='dot token'>.</span><span class='value identifier id'>value</span> <span class='assign token'>=</span> <span class='h identifier id'>h</span><span class='dot token'>.</span><span class='values identifier id'>values</span><span class='dot token'>.</span><span class='first identifier id'>first</span>
+  <span class='rule identifier id'>rule</span><span class='dot token'>.</span><span class='limits identifier id'>limits</span> <span class='assign token'>=</span> <span class='extract_limits identifier id'>extract_limits</span><span class='lparen token'>(</span><span class='opts identifier id'>opts</span><span class='rparen token'>)</span>
+  <span class='rule identifier id'>rule</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="deny?-instance_method">
+  
+    - (<tt>Object</tt>) <strong>deny?</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/doorman/rule.rb', line 49</span>
+
+<span class='def def kw'>def</span> <span class='deny? fid id'>deny?</span>
+  <span class='type identifier id'>type</span> <span class='eq op'>==</span> <span class='symbol val'>:deny</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="evaluate?-instance_method">
+  
+    - (<tt>Object</tt>) <strong>evaluate?</strong>(action_name) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/doorman/rule.rb', line 53</span>
+
+<span class='def def kw'>def</span> <span class='evaluate? fid id'>evaluate?</span><span class='lparen token'>(</span><span class='action_name identifier id'>action_name</span><span class='rparen token'>)</span>
+  <span class='lparen token'>(</span><span class='notop op'>!</span><span class='limits identifier id'>limits</span><span class='dot token'>.</span><span class='key? fid id'>key?</span><span class='lparen token'>(</span><span class='symbol val'>:only</span><span class='rparen token'>)</span> <span class='orop op'>||</span> <span class='limits identifier id'>limits</span><span class='lbrack token'>[</span><span class='symbol val'>:only</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='include? fid id'>include?</span><span class='lparen token'>(</span><span class='action_name identifier id'>action_name</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span><span class='rparen token'>)</span><span class='rparen token'>)</span> <span class='andop op'>&amp;&amp;</span>
+    <span class='lparen token'>(</span><span class='notop op'>!</span><span class='limits identifier id'>limits</span><span class='dot token'>.</span><span class='key? fid id'>key?</span><span class='lparen token'>(</span><span class='symbol val'>:exclude</span><span class='rparen token'>)</span> <span class='orop op'>||</span> <span class='notop op'>!</span><span class='limits identifier id'>limits</span><span class='lbrack token'>[</span><span class='symbol val'>:exclude</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='include? fid id'>include?</span><span class='lparen token'>(</span><span class='action_name identifier id'>action_name</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span><span class='rparen token'>)</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Dec  4 23:41:39 2009 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.4.0 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>
