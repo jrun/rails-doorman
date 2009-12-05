@@ -1,1 +1,1 @@
-require 'rails_doorman'
+require 'doorman'

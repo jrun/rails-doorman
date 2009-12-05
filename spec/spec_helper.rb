@@ -9,7 +9,7 @@ end
 require 'spec'
 require 'spec/rails'
 
-require 'rails_doorman'
+require 'doorman'
 
 Spec::Runner.configure do |config|
 end

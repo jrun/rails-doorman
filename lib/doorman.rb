@@ -1,5 +1,5 @@
-require 'rails_doorman/rule'
-require 'rails_doorman/helpers'
+require 'doorman/rule'
+require 'doorman/helpers'
 
 module Doorman
   class Unauthorized < StandardError; end
