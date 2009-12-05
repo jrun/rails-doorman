@@ -89,10 +89,6 @@ like a bug than a todo.
 
 ===  More configurable
 
-+rails-doorman+ should be configurable. For example, the :user rule
-uses +login+ for comparison. Often times +username+ is used instead of
-+login+.
++rails-doorman+ should be configurable but in what ways?
 
-This type of configuration is partially implementd but it is half
-baked.
 
