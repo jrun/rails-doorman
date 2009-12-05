@@ -1,23 +1,18 @@
-== rails_doorman
+= rails-doorman
 
-+rails_doorman+ is an authorization plugin for Ruby on Rails
-applications.
++rails-doorman+ is an authorization plugin for Ruby on Rails applications. This code was orignally written by Michael D. Ivey for Merb.
 
-This code was orignally written by Michael D. Ivey for Merb.
+== Configuration
 
-== Resources
+Doorman expects the controller to respond to +current_user+
 
-Development
+The +:role+ option expects +current_user+ to respond to +has_role?(role_name)+. To change the default assign the option a new value:
 
-* http://github.com/jrun/rails_doorman
+  Doorman.options[:has_role_method]
 
-Source
+The +:user+ option expects +current_user+ to respond to +login+. To change the default assign the option a new value:
 
-* git://github.com/jrun/rails_doorman.git
-
-Bugs
-
-* http://github.com/jrun/rails_doorman/issues
+  Doorman.options[:user_identifier_method]
 
 == Usage
 
@@ -32,7 +27,7 @@ Bugs
   allow :role => :admin, :exclude => :show
   allow :role => :troll, :only => :index
 
-+rails_doorman+ supports more than roles.
++rails-doorman+ supports more than roles.
 
   allow :user => :nancy                     # current_user.login.to_sym == 'nancy'.to_sym
   allow :host => 'allowed.example.org'      # request.host =~ Regexp.new('allowed.example.org')
@@ -70,6 +65,21 @@ can be caught in ApplicationController#rescue_action_in_public.
     end
   end
 
+== Resources
+
+Development
+
+* http://github.com/jrun/rails-doorman
+
+Source
+
+* git://github.com/jrun/rails-doorman.git
+
+Bugs
+
+* http://github.com/jrun/rails-doorman/issues
+
+
 == TODO
 
 === Rule inheritance
@@ -79,10 +89,10 @@ like a bug than a todo.
 
 ===  More configurable
 
-+rails_doorman+ should be configurable. For example, the :user rule
++rails-doorman+ should be configurable. For example, the :user rule
 uses +login+ for comparison. Often times +username+ is used instead of
 +login+.
 
 This type of configuration is partially implementd but it is half
-baked and not tested.
+baked.
 
