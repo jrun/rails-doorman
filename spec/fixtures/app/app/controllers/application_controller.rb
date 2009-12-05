@@ -23,11 +23,6 @@ class ApplicationController < ActionController::Base
   
   
   def rescue_action_in_public(exception)
-    
-
-    Rails.logger.debug "******************* IN HERE"
-
-    
     case exception
     when Doorman::InvalidRule
       render :text => 'Invalid Rule', :status => '500 Internal Server Error'
